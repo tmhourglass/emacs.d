@@ -257,7 +257,7 @@
 	(evil-define-key 'normal vterm-mode-map (kbd "o")        #'evil-insert-resume)
 	(evil-define-key 'normal vterm-mode-map (kbd "<return>") #'evil-insert-resume)))
 
-(setq tramp-adb-program "/Users/lionqu/Library/Android/sdk/platform-tools/adb")
+;; (setq tramp-adb-program "/Users/lionqu/Library/Android/sdk/platform-tools/adb")
 
 (use-package ws-butler
   :ensure t

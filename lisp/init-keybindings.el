@@ -129,7 +129,7 @@
     "R" 'zilongshanren/run-current-file
     "ep" 'my-goto-previous-error
     "el" 'my-list-errors
-    "oy" 'youdao-dictionary-search-at-point+
+    ;; "oy" 'youdao-dictionary-search-at-point+
     "oo" 'zilongshanren/hotspots
     "or" 'org-roam-node-find
     "gs" 'magit-status

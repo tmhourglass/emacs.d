@@ -107,9 +107,9 @@
 ;; Explicitly set the prefered coding systems to avoid annoying prompt
 ;; from emacs (especially on Microsoft Windows)
 
-
-(set-language-environment 'chinese-gbk)
-(prefer-coding-system 'utf-8-auto)
+;; 这两个导致consult-ripgrep出问题，编码问题导致，而非源码 -- 都去掉
+;; (set-language-environment 'chinese-gbk)
+;; (prefer-coding-system 'utf-8-auto)
 
 ;; (prefer-coding-system 'utf-8)
 ;; (setq locale-coding-system 'utf-8)

@@ -35,8 +35,10 @@
                  rime-predicate-punctuation-line-begin-p
                  rime-predicate-prog-in-code-p))
          (setq rime-librime-root (expand-file-name "librime/dist" user-emacs-directory))
-         (setq rime-emacs-module-header-root "/opt/homebrew/Cellar/emacs-mac/emacs-28.2-mac-9.1/include/")
+         ;; (setq rime-emacs-module-header-root "/opt/homebrew/Cellar/emacs-mac/emacs-28.2-mac-9.1/include/")
          (setq rime-show-candidate 'posframe)
+         ;; tmhourglass 通过s-e进入rime-inline-ascii，不作此设置，若需要，则看emacs-china中书签有记录
+         ;; (setq rime-inline-ascii-trigger 'shift-l)
          (setq rime-share-data-dir "~/Library/Rime")
          (setq rime-user-data-dir "~/Library/Rime")
          (if sys/win32p

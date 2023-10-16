@@ -233,7 +233,7 @@
     (defvar deft-dir ""
       "deft org files locaiton")
 
-    (setq org-agenda-dir "~/org-notes/")
+    (setq org-agenda-dir "~/org-notes/agenda")
     (setq deft-dir  "~/org-notes/")
 
 
@@ -647,7 +647,7 @@ object (e.g., within a comment).  In these case, you need to use
     (setq org-agenda-file-work (expand-file-name "work.org" org-agenda-dir))
     (setq org-agenda-file-journal (expand-file-name "journal.org" org-agenda-dir))
     (setq org-agenda-file-code-snippet (expand-file-name "snippet.org" org-agenda-dir))
-    (setq org-default-notes-file (expand-file-name "gtd.org" org-agenda-dir))
+    ;; (setq org-default-notes-file (expand-file-name "gtd.org" org-agenda-dir))
     (setq org-agenda-file-blogposts (expand-file-name "all-posts.org" org-agenda-dir))
     (setq org-agenda-files (list org-agenda-file-gtd org-agenda-file-journal org-agenda-file-blogposts org-agenda-file-work org-agenda-file-note))
 
@@ -945,7 +945,8 @@ holding contextual information."
     (interactive)
     (org-capture nil "s"))
   :custom
-  (org-roam-directory (file-truename org-directory))
+  ;; (org-roam-directory (file-truename org-directory))
+  (org-roam-directory (file-truename "~/org-notes/roam"))
   :config
   (cl-defmethod org-roam-node-type ((node org-roam-node))
     "Return the TYPE of NODE."

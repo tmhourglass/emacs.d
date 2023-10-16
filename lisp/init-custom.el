@@ -127,6 +127,8 @@ For example:
    blog-admin-dir "~/zilongshanren.com"))
 
 
+;; tmhourglass
+(setq system-time-locale "C")
 
 ;; Load `custom-file'
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
