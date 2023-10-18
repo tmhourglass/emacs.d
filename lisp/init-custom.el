@@ -122,9 +122,9 @@ For example:
 
 (if sys/win32p
     (setq
-     blog-admin-dir "d:/zilongshanren.com")
+     blog-admin-dir "d:/myblog")
   (setq
-   blog-admin-dir "~/zilongshanren.com"))
+   blog-admin-dir "~/org-notes/my-blog/"))
 
 
 ;; tmhourglass

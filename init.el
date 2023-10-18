@@ -125,9 +125,9 @@
 
 ;; Languages
 (require 'init-lisp)
-(require 'init-csharp)
+;; (require 'init-csharp)
 (require 'init-javascript)
-(require 'init-rust)
+;; (require 'init-rust)
 (require 'init-python)
 (require 'init-c)
 (require 'init-dart)

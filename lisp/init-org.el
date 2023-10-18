@@ -346,7 +346,7 @@ object (e.g., within a comment).  In these case, you need to use
 
 
     (define-key org-mode-map (kbd "RET")
-      'zilong/org-return)
+                'zilong/org-return)
 
     (evil-define-key 'normal org-mode-map
       "+" #'org-cycle-list-bullet)
@@ -814,15 +814,17 @@ See `org-capture-templates' for more information."
 <li><a href='/index.html'>Wiki目录</a></li>
 </ul>
 </div>")
+
     (defvar zilongshanren-website-html-blog-head
       " <link rel='stylesheet' href='css/site.css' type='text/css'/> \n
     <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/worg.css\"/>")
+
     (setq org-publish-project-alist
           `(
             ("blog-notes"
-             :base-directory "~/org-notes"
+             :base-directory "~/org-notes/agenda/"
              :base-extension "org"
-             :publishing-directory "~/org-notes/public_html/"
+             :publishing-directory "~/org-notes/agenda/public_html/"
 
              :recursive t
              :html-head , zilongshanren-website-html-blog-head
@@ -832,9 +834,9 @@ See `org-capture-templates' for more information."
              :exclude "gtd.org"
              :exclude-tags ("ol" "noexport")
              :section-numbers nil
-             :html-preamble ,zilongshanren-website-html-preamble
-             :author "zilongshanren"
-             :email "guanghui8827@gmail.com"
+             ;; :html-preamble ,zilongshanren-website-html-preamble
+             :author "tmhourglass"
+             :email "heshw@live.cn"
              :auto-sitemap t            ; Generate sitemap.org automagically...
              :sitemap-filename "index.org" ; ... call it sitemap.org (it's the default)...
              :sitemap-title "我的wiki"     ; ... with title 'Sitemap'.
@@ -842,9 +844,9 @@ See `org-capture-templates' for more information."
              :sitemap-file-entry-format "%t" ; %d to output date, we don't need date here
              )
             ("blog-static"
-             :base-directory "~/org-notes"
+             :base-directory "~/org-notes/agenda/"
              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-             :publishing-directory "~/org-notes/public_html/"
+             :publishing-directory "~/org-notes/agenda/public_html/"
              :recursive t
              :publishing-function org-publish-attachment
              )
