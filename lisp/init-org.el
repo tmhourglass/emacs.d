@@ -1066,7 +1066,7 @@ holding contextual information."
 
   (setq-default org-download-heading-lvl nil
                 org-download-image-dir "./img"
-                ;; org-download-screenshot-method "screencapture -i %s"
+                org-download-screenshot-method "screencapture -i %s"
                 org-download-screenshot-file (expand-file-name "screenshot.jpg" temporary-file-directory)))
 
 (defun dw/org-present-prepare-slide ()
