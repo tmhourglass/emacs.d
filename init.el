@@ -140,6 +140,10 @@
 
 ;; programming
 (require 'init-programming)
+
+;; tmhourglass - myself
+(require 'init-tmhourglass)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
 (put 'dired-find-alternate-file 'disabled nil)
