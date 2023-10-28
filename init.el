@@ -31,6 +31,8 @@
 ;;; Code:
 (require 'cl)
 
+(setq package-check-signature nil)
+
 (when (version< emacs-version "25.1")
   (error "This requires Emacs 25.1 and above!"))
 
@@ -125,7 +127,6 @@
 
 ;; Languages
 (require 'init-lisp)
-;; (require 'init-csharp)
 (require 'init-javascript)
 ;; (require 'init-rust)
 (require 'init-python)
