@@ -25,6 +25,13 @@
 ;;
 
 
+;; 个人配置点：
+;; 1.修改org的相关本地目录
+;; 2.日期格式
+;; 3.增加lazycat的auto-save  (from github)
+;; 4.会话恢复
+
+
 ;; 日期中的星期格式由中文改为英文
 (setq system-time-locale "C")
 
