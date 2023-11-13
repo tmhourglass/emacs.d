@@ -1023,6 +1023,11 @@ holding contextual information."
            :if-new
            (file+head "articles/${title}.org" "#+title: ${title}\n#+filetags: :article:\n")
            :immediate-finish t
+           :unnarrowed t)
+          ("b" "book" plain "%?"
+           :if-new
+           (file+head "books/${title}.org" "#+title: ${title}\n#+filetags: :book:\n")
+           :immediate-finish t
            :unnarrowed t)))
   ;; If using org-roam-protocol
   (require 'org-roam-protocol)
