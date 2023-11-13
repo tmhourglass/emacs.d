@@ -190,14 +190,17 @@
 
 (with-eval-after-load 'org
   (progn
-    ;; If you intend to use org, it is recommended you change this!
-    (setq org-directory "~/org-notes/")
 
     (setq org-startup-indented t
           org-pretty-entities t
-          org-hide-emphasis-markers t
+          org-hide-emphasis-markers nil
+          org-fontify-emphasized-text nil
+          org-link-descriptive nil
+          org-fontify-quote-and-verse-blocks t
           org-startup-with-inline-images t
           org-image-actual-width '(300))
+
+
 
     (setq org-ellipsis "⤵")
 
@@ -397,33 +400,6 @@ object (e.g., within a comment).  In these case, you need to use
     ;; 在agenda里面显示efforts
     (require 'cl-lib)
 
-	(defun my/org-agenda-calculate-efforts (limit)
-      "Sum the efforts of scheduled entries up to LIMIT in the
-        agenda buffer."
-      (let (total)
-        (save-excursion
-          (while (< (point) limit)
-            (when (member (org-get-at-bol 'type) '("scheduled" "past-scheduled"))
-              (push (org-entry-get (org-get-at-bol 'org-hd-marker) "Effort") total))
-            (forward-line)))
-        (org-duration-from-minutes
-         (cl-reduce #'+
-                    (mapcar #'org-duration-to-minutes
-                            (cl-remove-if-not 'identity total))))))
-
-	(defun my/org-agenda-insert-efforts ()
-      "Insert the efforts for each day inside the agenda buffer."
-      (save-excursion
-        (let (pos)
-          (while (setq pos (text-property-any
-                            (point) (point-max) 'org-agenda-date-header t))
-            (goto-char pos)
-            (end-of-line)
-            (insert-and-inherit (concat " ("
-                                        (my/org-agenda-calculate-efforts
-                                         (next-single-property-change (point) 'day))
-                                        ")"))
-            (forward-line)))))
 
     (add-hook 'org-agenda-finalize-hook 'my/org-agenda-insert-efforts)
 
@@ -963,6 +939,7 @@ holding contextual information."
 
 
 (use-package org-roam
+  :if (file-exists-p org-directory)
   :init
   (defun jethro/org-capture-slipbox ()
     (interactive)
