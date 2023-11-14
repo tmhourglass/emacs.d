@@ -193,9 +193,9 @@
 
     (setq org-startup-indented t
           org-pretty-entities t
-          org-hide-emphasis-markers nil
-          org-fontify-emphasized-text nil
-          org-link-descriptive nil
+          org-hide-emphasis-markers t
+          org-fontify-emphasized-text t
+          org-link-descriptive t
           org-fontify-quote-and-verse-blocks t
           org-startup-with-inline-images t
           org-image-actual-width '(300))
