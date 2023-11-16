@@ -24,6 +24,13 @@
 ;; Floor, Boston, MA 02110-1301, USA.
 ;;
 
+(use-package treesit-auto
+  :ensure t
+  :demand t
+  :config
+  (setq treesit-auto-install 'prompt)
+  (global-treesit-auto-mode))
+
 
 ;;; Tree-sitter support
 ;; https://git.savannah.gnu.org/cgit/emacs.git/tree/admin/notes/tree-sitter/starter-guide?h=emacs-29
@@ -39,6 +46,7 @@
              (css-mode        . css-ts-mode)
              (java-mode       . java-ts-mode)
              (javascript-mode . js-ts-mode)
+             (json-mode . json-ts-mode)
              (js-json-mode    . json-ts-mode)
              (python-mode     . python-ts-mode)
              (ruby-mode       . ruby-ts-mode)
@@ -51,6 +59,7 @@
   (add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-ts-mode)))
 
 
+
 (use-package reformatter
   :ensure t
   :config
@@ -61,7 +70,7 @@
   (reformatter-define css-beautify :program "css-beautify" :group 'reformatter)
   (reformatter-define hindent :program "hindent" :lighter " Hin" :group 'reformatter)
   (reformatter-define ormolu :program "ormolu" :lighter " Orm"
-                      :args `("--stdin-input-file" ,buffer-file-name) :group 'reformatter))
+    :args `("--stdin-input-file" ,buffer-file-name) :group 'reformatter))
 
 (use-package apheleia
   :bind ("C-c f" . apheleia-format-buffer)
