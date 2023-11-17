@@ -132,7 +132,7 @@
   (use-package exec-path-from-shell
     :init
     (setq exec-path-from-shell-variables '("PATH" "MANPATH")
-          exec-path-from-shell-arguments '("-l"))
+          exec-path-from-shell-arguments '("-i"))
     (exec-path-from-shell-initialize)))
 
 ;; Start server
@@ -246,7 +246,7 @@
 (setq-default abbrev-mode t)
 
 (if sys/macp
-    (setq find-program "/opt/homebrew/bin/fd")
+    (setq find-program "/usr/local/bin/fd")
   (setq find-program "fd"))
 
 (define-abbrev-table 'global-abbrev-table '(
