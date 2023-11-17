@@ -120,7 +120,7 @@
 ;; Frameworks
 ;; yaml init , shell etc
 (require 'init-web)
-(require 'init-gpu)
+;; (require 'init-gpu)
 (require 'init-persp)
 
 
@@ -129,10 +129,10 @@
 (require 'init-javascript)
 ;; (require 'init-rust)
 (require 'init-python)
-(require 'init-c)
-(require 'init-dart)
-(require 'init-elixir)
-(require 'init-haskell)
+;; (require 'init-c)
+;; (require 'init-dart)
+;; (require 'init-elixir)
+;; (require 'init-haskell)
 
 ;; personal
 (require 'init-keybindings)
