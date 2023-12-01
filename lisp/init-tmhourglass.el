@@ -2,9 +2,6 @@
 
 ;; Copyright (C) 2021-2023 zilongshanren
 
-;; Author: zilongshanren <guanghui8827@gmail.com>
-;; URL: https://github.com/zilongshanren/emacs.d
-
 
 ;; This file is not part of GNU Emacs.
 ;;
@@ -25,11 +22,12 @@
 ;;
 
 
-;; 个人配置点：
+;; 基于zlsr的修改：
 ;; 1.修改org的相关本地目录
 ;; 2.日期格式
 ;; 3.增加lazycat的auto-save  (from github)
-;; 4.会话恢复
+;; 4.会话恢复  (改回去，有利于提升启动速度）
+;; 5.调试python环境及eglot
 
 
 ;; 日期中的星期格式由中文改为英文

@@ -44,6 +44,10 @@
     "e" 'live-py-set-version)
   (setq python-shell-interpreter "python3")
 
+  ;; tmhourglass add : fix python-add-import
+  (setq python-interpreter "python3")
+  (add-hook 'python-ts-mode-hook #'eglot-ensure)
+
   ;; Live Coding in Python
   (use-package live-py-mode))
 
