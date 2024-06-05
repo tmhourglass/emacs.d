@@ -52,5 +52,20 @@
   (use-package live-py-mode))
 
 
+;; virtual envrionment
+(use-package auto-virtualenvwrapper
+  :ensure t
+  :hook (python-mode-hook . #'auto-virtualenvwrapper-activate))
+
+(use-package pyvenv
+  :ensure t
+  :config
+  (setenv "WORKON_HOME" (expand-file-name "~/workspace/code/python/envs"))
+  ;; (setq python-shell-interpreter "python3")  ; （可选）更改解释器名字
+  (pyvenv-mode t)
+  ;; （可选）如果希望启动后激活 miniconda 的 base 环境，就使用如下的 hook
+  ;; :hook
+  ;; (python-mode . (lambda () (pyvenv-workon "..")))
+)
 
 (provide 'init-python)

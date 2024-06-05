@@ -137,7 +137,7 @@
 ;; personal
 (require 'init-keybindings)
 ;; ai
-;; (require 'init-ai)
+(require 'init-ai)
 
 ;; programming
 (require 'init-programming)

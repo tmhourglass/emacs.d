@@ -70,4 +70,16 @@
 ;;   :demand t
 ;;   :ensure nil)
 
+;; ~/.authinfo
+;; 使用百度翻译api进行翻译，100W/月  -- 用量短信提醒
+(use-package immersive-translate
+  :ensure t
+  :init
+  (setq immersive-translate-backend 'baidu
+        immersive-translate-baidu-appid "20240604002069851")
+  :config
+  (add-hook 'elfeed-show-mode-hook #'immersive-translate-setup)
+  (add-hook 'nov-pre-html-render-hook #'immersive-translate-setup))
+
+
 (provide 'init-reading)

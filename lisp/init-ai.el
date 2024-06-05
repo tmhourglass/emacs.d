@@ -16,5 +16,19 @@
 ;;       (plist-get (car (auth-source-search :host "api.openai.com"))
 ;;                  :secret))
 
+;; api-key : ~/.authinfo
+;; moonshot token: sk-MLU7DNta9EFOwxezZkgGMo8uu9Y3UtQMdVZ1CeHMe6Mmzs6I
+(use-package gptel
+  :ensure t
+  :config
+  (setq gptel-model "moonshot-v1-8k")
+  (setq gptel-default-mode 'org-mode)
+  (setq gptel-backend
+        (gptel-make-openai "Moonshot"
+          :key 'gptel-api-key
+          :models '("moonshot-v1-8k"
+                    "moonshot-v1-32k"
+                    "moonshot-v1-128k")
+          :host "api.moonshot.cn")))
 
 (provide 'init-ai)
