@@ -77,4 +77,14 @@
   :config
   (setf (alist-get 'python-ts-mode apheleia-mode-alist) '(isort black)))
 
+;; 使用lsp-bridge，禁用eglot
+;; 禁用其他补全插件 lsp-mode、eglot、company、corfu  -- 有其他补全插件，相互有引用，不方便直接禁用，暂时不用
+;; (use-package lsp-bridge
+;;   :straight '(lsp-bridge :type git :host github :repo "manateelazycat/lsp-bridge"
+;;             :files (:defaults "*.el" "*.py" "acm" "core" "langserver" "multiserver" "resources")
+;;             :build (:not compile))
+;;   :init
+;;   (global-lsp-bridge-mode))
+
+
 (provide 'init-programming)
