@@ -28,3 +28,4 @@ tabsession.el
 elixir-ls
 /nov-places
 /tree-sitter/
+.DS_Store
