@@ -42,8 +42,15 @@
   :ensure t
   :init
   (if (display-graphic-p)
-      (load-theme 'doom-solarized-light)
-    (load-theme 'doom-tomorrow-night)))
+      ;; (load-theme 'doom-solarized-light)
+      (load-theme 'doom-moonlight t) ; 当前主题
+    (load-theme 'doom-tomorrow-night))
+  :config
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (doom-themes-visual-bell-config) ; Enable flashing mode-line on errors
+  (doom-themes-org-config))
+
 
 (set-face-attribute 'default nil :height 150)
 
