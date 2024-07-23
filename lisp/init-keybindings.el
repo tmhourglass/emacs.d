@@ -58,7 +58,7 @@
       (global-set-key (kbd "s-v") 'yank)
       (global-set-key (kbd "s-z") 'undo)
       (global-set-key (kbd "s-l") 'goto-line)
-      ;; (global-set-key (kbd "s-q") 'save-buffers-kill-emacs)
+      (global-set-key (kbd "s-q") 'save-buffers-kill-emacs)
       (global-set-key (kbd "s-a") 'mark-whole-buffer)
       (global-set-key (kbd "s-s") 'save-buffer)))
 
@@ -68,7 +68,8 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
-(define-key global-map (kbd "s-e") 'rime-inline-ascii)
+;; (define-key global-map (kbd "s-e") 'rime-inline-ascii)
+(define-key global-map (kbd "s-e") 'sis-switch)
 (global-set-key (kbd "s-/") 'hippie-expand)
 
 
@@ -235,8 +236,8 @@
   )
 
 
-(global-set-key (kbd "<f5>") 'gud-run)
-(global-set-key (kbd "<f9>") 'gud-break)
+;; (global-set-key (kbd "<f5>") 'gud-run)
+;; (global-set-key (kbd "<f9>") 'gud-break)
 (setq gdb-many-windows t)
 (setq gdb-show-main t)
 
