@@ -33,10 +33,11 @@
   (setq tab-bar-show 1)                     ;; hide bar if <= 1 tabs open
   (setq tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
 
+  ;; 20240723 black -> white
   (custom-set-faces
    '(tab-bar ((t (:inherit mode-line))))
    '(tab-bar-tab ((t (:inherit mode-line :foreground "#993644"))))
-   '(tab-bar-tab-inactive ((t (:inherit mode-line-inactive :foreground "black")))))
+   '(tab-bar-tab-inactive ((t (:inherit mode-line-inactive :foreground "white")))))
 
   (defvar ct/circle-numbers-alist
     '((0 . "⓪")
