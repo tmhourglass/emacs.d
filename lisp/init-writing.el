@@ -24,32 +24,48 @@
 ;; Floor, Boston, MA 02110-1301, USA.
 ;;
 
-(use-package rime
-  :init
-  (setq default-input-method "rime")
+;; (use-package rime
+;;   :init
+;;   (setq default-input-method "rime")
+;;   :config
+;;   (progn (set-face-attribute 'rime-default-face nil :foreground "#839496" :background "#073642")
+;;          (setq rime-disable-predicates
+;;                '(rime-predicate-evil-mode-p
+;;                  rime-predicate-after-alphabet-char-p
+;;                  rime-predicate-punctuation-line-begin-p
+;;                  rime-predicate-prog-in-code-p))
+;;          (setq rime-librime-root (expand-file-name "librime/dist" user-emacs-directory))
+;;          (setq rime-emacs-module-header-root "/opt/homebrew/Cellar/emacs-mac/emacs-29.1-mac-10.0/include")
+;;          (setq rime-show-candidate 'posframe)
+;;          ;; tmhourglass 通过s-e进入rime-inline-ascii，不作此设置，若需要，则看emacs-china中书签有记录
+;;          ;; (setq rime-inline-ascii-trigger 'shift-l)
+;;          (setq rime-share-data-dir "~/Library/Rime")
+;;          (setq rime-user-data-dir "~/Library/Rime")
+;;          (if sys/win32p
+;;              (progn
+;;                (setq rime-share-data-dir "C:\\Users\\lionqu\\AppData\\Roaming\\Rime")
+;;                (setq rime-user-data-dir "C:\\Users\\lionqu\\AppData\\Roaming\\Rime")
+;;                ))
+;;          (setq rime-posframe-properties
+;;                (list :background-color "#073642"
+;;                      :foreground-color "#839496"
+;;                      :internal-border-width 1))))
+
+;; rime come from eason0210
+(use-package sis
+  :demand t
+  ;; :bind ("<f10>" . sis-switch)   ; s-e global keybings
   :config
-  (progn (set-face-attribute 'rime-default-face nil :foreground "#839496" :background "#073642")
-         (setq rime-disable-predicates
-               '(rime-predicate-evil-mode-p
-                 rime-predicate-after-alphabet-char-p
-                 rime-predicate-punctuation-line-begin-p
-                 rime-predicate-prog-in-code-p))
-         (setq rime-librime-root (expand-file-name "librime/dist" user-emacs-directory))
-         (setq rime-emacs-module-header-root "/Applications/Emacs.app/Contents/Resources/include")
-         (setq rime-show-candidate 'posframe)
-         ;; tmhourglass 通过s-e进入rime-inline-ascii，不作此设置，若需要，则看emacs-china中书签有记录
-         ;; (setq rime-inline-ascii-trigger 'shift-l)
-         (setq rime-share-data-dir "~/Library/Rime")
-         (setq rime-user-data-dir "~/Library/Rime")
-         (if sys/win32p
-             (progn
-               (setq rime-share-data-dir "C:\\Users\\lionqu\\AppData\\Roaming\\Rime")
-               (setq rime-user-data-dir "C:\\Users\\lionqu\\AppData\\Roaming\\Rime")
-               ))
-         (setq rime-posframe-properties
-               (list :background-color "#073642"
-                     :foreground-color "#839496"
-                     :internal-border-width 1))))
+  (add-to-list 'sis-prefix-override-keys "M-s")
+  (add-to-list 'sis-prefix-override-keys "M-g")
+  (when sys/macp
+    (sis-ism-lazyman-config "com.apple.keylayout.ABC" "im.rime.inputmethod.Squirrel.Hans"))
+  (when (eq system-type 'gnu/linux)
+    (sis-ism-lazyman-config "1" "2" 'fcitx5))
+  (setq sis-other-cursor-color "orange")
+  (sis-global-cursor-color-mode t)
+  (sis-global-respect-mode t))
+
 
 (use-package pyim
   :ensure t
