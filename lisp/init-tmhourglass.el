@@ -109,4 +109,50 @@
 ;;     (setq codeium/document/cursor_offset 'my-codeium/document/cursor_offset))
 
 
+;; 试用新主题
+(defun my/load-doom-theme (theme)
+  "Disable active themes and load a Doom theme."
+  (interactive (list (intern (completing-read "Theme: "
+                                              (->> (custom-available-themes)
+                                                   (-map #'symbol-name)
+                                                   (--select (string-prefix-p "doom-" it)))))))
+  (ap/switch-theme theme)
+  (set-face-foreground 'org-indent (face-background 'default)))
+
+(defun my/switch-theme (theme)
+  "Disable active themes and load THEME."
+  (interactive (list (intern (completing-read "Theme: "
+                                              (->> (custom-available-themes)
+                                                   (-map #'symbol-name))))))
+  (mapc #'disable-theme custom-enabled-themes)
+  (load-theme theme 'no-confirm))
+
+
+;; org modern
+;; (use-package org-modern-indent
+;;   :load-path "~/config/zlsr-emacs/elpa/org-modern-indent/"
+;;   :config
+;;   (add-hook 'org-mode-hook #'org-modern-indent-mode 90))
+
+;; Prettify UI
+;; (use-package org-modern
+;;   :ensure t
+;;   :hook ((org-mode . org-modern-mode)
+;;          (org-agenda-finalize . org-modern-agenda)
+;;          (org-modern-mode . (lambda ()
+;;                               "Adapt `org-modern-mode'."
+;;                               ;; Disable Prettify Symbols mode
+;;                               (setq prettify-symbols-alist nil)
+;;                               (prettify-symbols-mode -1)))))
+
+
+;; (use-package org-modern ;; 安卓下 Droid Sans Mono 字体不能显示 bullet. 最好安装 Iosevka Aile 字体.
+;;   :ensure t
+;;   ;; :config
+;;   ;; (setq org-modern-hide-stars nil) ; adds extra indentation
+;;   ;; (setq org-modern-table nil)
+;;   :init
+;;   (global-org-modern-mode))
+
+
 (provide 'init-tmhourglass)
