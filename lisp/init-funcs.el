@@ -1425,7 +1425,7 @@ eudic program must set auto translate words in clipboard."
       (setq word (read-string (concat "Translate Words: ") default-word)))
     ;; Put into kill-ring for eudic translate words in clipboard.
     (kill-new word)
-    (shell-command "open /Applications/Eudb_en_free.app")
+    (shell-command "open /Applications/Eudic.app")
     ;; Recover kill-ring later.
     (run-with-timer 1 nil (lambda (word old)
                             (if (equal word (car kill-ring))
